@@ -11,23 +11,11 @@ var dirs = {
   dist: __dirname
 };
 
-var srcDirs = {
-  html: path.join(dirs.src, 'html'),
-  js: path.join(dirs.src, 'js'),
-  styl: path.join(dirs.src, 'styl')
-};
-
-var distDirs = {
-  html: dirs.dist,
-  js: dirs.dist,
-  styl: dirs.dist
-}
-
 module.exports = {
-  entry: path.join(srcDirs.js, 'main.js'),
+  entry: path.join(dirs.src, 'index.js'),
   
   output: {
-    path: distDirs.js,
+    path: dirs.dist,
     filename: 'app.js',
   },
   
@@ -45,7 +33,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: '/node_modules/',
-        include: srcDirs.js,
+        include: dirs.src,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react']
@@ -54,7 +42,7 @@ module.exports = {
       {
         test: /\.styl$/,
         exclude: '/node_modules/',
-        include: srcDirs.js,
+        include: dirs.src,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
       }
     ]

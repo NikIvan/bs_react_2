@@ -5,18 +5,18 @@ class UserListItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.deleteUser = this.deleteUser.bind(this);
+    this.onDelete = this.onDelete.bind(this);
   }
 
-  deleteUser() {
+  onDelete() {
     console.log('Removing user');
-    this.props.deleteUser(this.props.id);
+    this.props.onDelete(this.props.id);
   }
 
   render() {
     return (<li className="user-list-item">
       <div className="name">{this.props.name}</div>
-      <button className="btn-delete" onClick={ this.deleteUser }><i className="fa fa-times"></i></button>
+      <button className="btn-delete" onClick={ this.onDelete }><i className="fa fa-times"></i></button>
     </li>
     );
   }

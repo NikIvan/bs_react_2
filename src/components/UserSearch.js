@@ -4,18 +4,18 @@ import './UserSearch.styl';
 class UserSearch extends React.Component {
     constructor(props) {
         super(props);
-
-        this.searchUser = this.searchUser.bind(this);
+        
+        this.onSearch = this.onSearch.bind(this);
     }
 
-    searchUser() {
+    onSearch() {
       let pattern = this.refs.search.value;
-      this.props.searchUser(pattern);
+      this.props.onSearch(pattern);
     }
 
     render() {
         return <div className="user-search">
-          <input type="text" placeholder="Search for user" ref="search" value={ this.props.pattern } onChange={ this.searchUser }/>
+          <input type="text" placeholder="Search for user" ref="search" value={ this.props.search } onChange={ this.onSearch }/>
         </div>;
     }
 }

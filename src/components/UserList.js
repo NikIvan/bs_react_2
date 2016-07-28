@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import UserListItem from './UserListItem';
 import './UserList.styl'
 
-class UserList extends React.Component {
+class UserList extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,7 @@ class UserList extends React.Component {
   }
 
   eachUser(user) {
-    return <UserListItem key={user.id} id={user.id} name={user.name} deleteUser={ this.props.deleteUser } />
+    return <UserListItem key={user.id} id={user.id} name={user.name} onDelete={this.props.onItemDelete} />
   }
 
   render() {
