@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserSearch.styl';
 
 class UserSearch extends React.Component {
     constructor(props) {

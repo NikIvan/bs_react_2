@@ -16,7 +16,7 @@ class UserListItem extends React.Component {
   render() {
     return (<li className="user-list-item">
       <div className="name">{this.props.name}</div>
-      <button className="btn-delete" onClick={ this.deleteUser }>Delete</button>
+      <button className="btn-delete" onClick={ this.deleteUser }><i className="fa fa-times"></i></button>
     </li>
     );
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserAdd.styl';
 
 class UserAdd extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class UserAdd extends React.Component {
 
   onKeyUp(e) {
     if(e.keyCode === 13) {
-      this.refs.userAddForm.submit(this.onUserAdd);
+      this.onUserAdd(e);
     }
     
     return;
@@ -32,7 +33,7 @@ class UserAdd extends React.Component {
   render() {
     return (<form className="user-add" ref="userAddForm" onSubmit={ this.onUserAdd }>
       <input type="text" placeholder="Enter user name" onKeyUp={this.onKeyUp} ref="name"/>
-      <button type="submit" onClick={this.addUser} >Add</button>
+      <button type="submit" onClick={ this.addUser }>Add</button>
     </form>
     );
   }

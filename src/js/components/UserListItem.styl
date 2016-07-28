@@ -1,14 +1,35 @@
+@import "../constants.styl"
+
 .user-list-item
-  // background-color #3ee
+  background-color white
+  padding 10px 20px
+  text-align left
+  border-bottom 1px solid div-color
   
   & > .name
     display inline-block
-    // background-color #aee
-    width 100px
-    text-align left
+    width 170px
     padding 10px 15px
     overflow-x hidden
-    margin-right 20px
+    font-size 1.2em
+    color pri-text-dark
     
   & > .btn-delete
-    padding 10px 15px
+    visibility hidden
+    padding 2px 4px
+    float right
+    background-color transparent
+    border 2px solid transparent
+    cursor pointer
+    color pri-text-dark
+    font-size 1em
+    
+    &:hover
+      box-shadow 0 1px 4px rgba(0, 0, 0, .5)
+  
+  &:last-child
+    border-bottom none
+    
+  &:hover
+    & > .btn-delete
+      visibility visible

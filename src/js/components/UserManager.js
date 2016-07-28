@@ -25,8 +25,8 @@ class UserManager extends React.Component {
 
   addUser(name) {
     let users = this.state.users;
-    let user = { name, id };
     let id = users.length ? users[users.length - 1].id + 1 : 0;
+    let user = { name, id };
 
     let newState = update(this.state, {
       users: {
